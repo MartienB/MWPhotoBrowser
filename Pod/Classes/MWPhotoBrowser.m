@@ -1011,15 +1011,13 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 
 - (CGRect)frameForCaptionView:(MWCaptionView *)captionView atIndex:(NSUInteger)index {
     // MB Custom
-    return captionView.frame;
-    //
-    //    CGRect pageFrame = [self frameForPageAtIndex:index];
-    //    CGSize captionSize = [captionView sizeThatFits:CGSizeMake(pageFrame.size.width, 0)];
-    //    CGRect captionFrame = CGRectMake(pageFrame.origin.x,
-    //                                     pageFrame.size.height - captionSize.height - (_toolbar.superview?_toolbar.frame.size.height:0),
-    //                                     pageFrame.size.width,
-    //                                     captionSize.height);
-    //    return CGRectIntegral(captionFrame);
+    CGRect pageFrame = [self frameForPageAtIndex:index];
+    //CGSize captionSize = [captionView sizeThatFits:CGSizeMake(pageFrame.size.width, 0)];
+    CGRect captionFrame = CGRectMake(pageFrame.origin.x,
+                                     10,
+                                     captionView.frame.size.width,
+                                     captionView.frame.size.height);
+    return CGRectIntegral(captionFrame);
 }
 
 - (CGRect)frameForSelectedButton:(UIButton *)selectedButton atIndex:(NSUInteger)index {
