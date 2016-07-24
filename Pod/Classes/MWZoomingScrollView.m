@@ -293,7 +293,7 @@
     }
     
     // Disable scrolling initially until the first pinch to fix issues with swiping on an initally zoomed in photo
-    self.scrollEnabled = YES;
+    self.scrollEnabled = NO;
     
     // If it's a video then disable zooming
     if ([self displayingVideo]) {
